@@ -8,7 +8,19 @@
 	
 </head>
 <body ng-app="webapp" ng-controller="ratereviewController">
-	<div id="starsDiv" star-rating score="scoreoptions"></div>
-	<span>clicked star : {{score}}</span>
+
+	<div id="newratings">
+		<div id="starsDiv" star-rating score="score" max-stars="5" mycallback-fn="myCallBack(newratings);"></div>
+		<span>clicked star  : {{score}}</span>
+		<span>total ratings : {{totalRatings}}</span>
+		<span>total users   : {{totalUsers}}</span>
+	</div>
+
+	<div id="avgratings" style="margin-top: 30px;">
+		<div id="starsDiv" average-rating average-score="avgScore" total-rating="totalRatings" total-user="totalUsers" max-stars="5" ></div>
+		<span>Average Ratings : {{avgScore}}</span>
+	</div>
+
+	
 </body>
 </html>
